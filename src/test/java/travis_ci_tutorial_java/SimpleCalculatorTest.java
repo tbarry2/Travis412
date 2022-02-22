@@ -1,5 +1,6 @@
 package travis_ci_tutorial_java;
 
+import java.security.InvalidParameterException;
 import java.util.*;
 
 import static org.junit.Assert.*;
@@ -28,5 +29,12 @@ public class SimpleCalculatorTest {
 	public void testDivide() {
 		SimpleCalculator calc = new SimpleCalculator();
 		assertEquals(calc.divide(6, 3), 2);
+	}
+
+	@Test (expected = InvalidParameterException.class)
+	public void testDivideZeroDenominator()
+	{
+		SimpleCalculator calc = new SimpleCalculator();
+		calc.divide(5, 0);
 	}
 }
