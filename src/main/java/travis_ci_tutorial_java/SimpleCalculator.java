@@ -1,5 +1,7 @@
 package travis_ci_tutorial_java;
 
+import java.security.InvalidParameterException;
+
 public class SimpleCalculator {
 	public int add(int a, int b) {
 		return a + b;
@@ -14,6 +16,10 @@ public class SimpleCalculator {
 	}
 
 	public int divide(int a, int b) {
+		if (b == 0)
+		{
+			throw new InvalidParameterException("Denominator cannot be 0");
+		}
 		return a / b;
 	}
 }
