@@ -16,7 +16,7 @@ public class SimpleCalculatorTest {
 	@Test
 	public void testSubtract() {
 		SimpleCalculator calc = new SimpleCalculator();
-		assertEquals(calc.subtract(5, 3), 2);
+		assertEquals(calc.subtract(5, 3), 2, .01);
 	}
 
 	@Test
@@ -36,5 +36,11 @@ public class SimpleCalculatorTest {
 	{
 		SimpleCalculator calc = new SimpleCalculator();
 		calc.divide(5, 0);
+	}
+
+	@Test
+	public void testSubtractDecimals() {
+		SimpleCalculator calc = new SimpleCalculator();
+		assertEquals(calc.subtract(5.9, 5.4), .5, .01);
 	}
 }
